@@ -1,0 +1,52 @@
+/*
+ * Ryan Huff
+ * COSC 311
+ * HW 09/07
+ * Fall 2016
+ * 
+ * Some code cannibalized from "Programming Hub for Android".
+ * 
+ */
+package sortClass;
+
+import java.lang.reflect.Array;
+
+public class classSort {
+
+	static int step1 = 1;
+	
+	public static void main (String [] args)
+	{
+		int[] input = {2, 5, 67, 11, 70, 101, 42, 100};
+			insertionSort(input);
+	}
+	
+	private static void numList(int[] input) {
+			System.out.println("Step" + " " + step1);
+			step1++;
+			
+				for (int i = 0; i<input.length; i++) {
+					System.out.print(input[i] + "," + " ");
+			}
+			
+				System.out.println("\n");
+	}
+	
+	private static void insertionSort(int[] array1) {
+		
+		int n = array1.length;
+		
+		for (int j = 1; j < n; j++) {
+			
+			int key = array1[j];
+			int i = j-1;
+			
+				while ((i> -1) && (array1 [i] > key)) {
+					array1[i+1] = array1[i];
+					i--;
+			}
+			array1[i+1] = key;
+			numList(array1);
+			}
+		}
+	}
